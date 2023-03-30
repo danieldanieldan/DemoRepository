@@ -1,0 +1,920 @@
+/*header*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    background-color: white;
+}
+
+
+/*logo header*/
+
+.spiral-logo {
+    font-family: "orpheus Pro";
+    font-weight: bold;
+    color: black;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.2em;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-right: 0em;
+    margin-left: 1em;
+    justify-content: flex-start;
+    display: flex;
+}
+
+
+
+
+/*menubar header*/
+
+.menubar{
+    margin-left: 0em;
+    padding-left: 0em;
+    display: flex;
+}
+
+
+.menubar-list{
+    display: flex;
+    justify-content:left;
+
+}
+
+.list-items{
+    color: black;
+    font-family: "orpheus pro";
+    font-size: 1.1em;
+    transition: 0.4s;
+    color: black;
+    text-decoration: none;
+    margin: 0.8em;
+}
+
+.list-items-current{
+    color: black;
+    font-family: "orpheus pro";
+    font-size: 1.1em;
+    transition: 0.4s;
+    color: black;
+    margin: 0.8em;
+}
+
+
+
+
+/*socials header*/
+
+.socials1{
+
+    justify-content:right;
+    padding-right: 2em;
+    line-height: 1;
+    justify-content: right;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    background-color: white;
+}
+
+
+.socials-icon:first-child{
+    margin-left: 2.5vw;
+    display: flex;
+}
+
+.socials-icon{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    box-sizing: content-box;
+    line-height: 1;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0.5em;
+    justify-content: right;
+}
+
+.socials-object{
+    pointer-events: none;
+}
+
+
+
+
+/*burger*/
+
+    .header-burger{
+        justify-content: flex-end;
+        flex: 0 0 50px;
+        margin-right: 0;
+        align-items: center;
+        width: 50px;
+        display: flex;
+        z-index: 2;
+    }
+
+    .burger {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+
+    .visually-hidden-burger {
+        position: absolute !important;
+        clip: rect(1px,1px,1px,1px);
+        padding: 0 !important;
+        border: 0 !important;
+        height: 1px !important;
+        width: 1px !important;
+        overflow: hidden;
+    }
+
+    .burger-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+    }
+
+    .burger-inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    .top-bun{
+        transform: translatey(-5.5px);
+        color: black;
+        background-color: black;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        content: '';
+        width: 100%;
+        transition: transform 250ms cubic-bezier(.2,.6,.3,1),width 250ms cubic-bezier(.2,.6,.3,1);
+        will-change: transform,width;
+        height: 1px;
+    }
+
+    .bottom-bun{
+        height: 1px;
+        background-color: black;
+        transform: translatey(5.5px);
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        content: '';
+        width: 100%;
+        transition: transform 250ms cubic-bezier(.2,.6,.3,1),width 250ms cubic-bezier(.2,.6,.3,1);
+        will-change: transform,width;
+
+    }
+
+
+
+
+
+
+/*mobile-folded-menu*/
+
+    .header-menu{
+        display: flex;
+        opacity: 0;
+        transition: visibility 400ms cubic-bezier(.4,0,.2,1),opacity 400ms cubic-bezier(.4,0,.2,1);
+        position: fixed;
+        z-index: 1; 
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        visibility:hidden;
+        user-select: none;
+        text-align: center;
+        pointer-events: auto;
+        font-size: 1.2em;
+        line-height: 1;
+        padding-top: 8vh;
+
+    }
+
+    .header-menu.show {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-mobile-folder{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 0;
+        background-color: white;
+
+    }
+
+
+    .header-menu-nav-list {
+        position: relative;
+        flex-grow: 1;
+        width: 100%;
+        transform: translatey(0);
+        transition: transform 600ms cubic-bezier(.4,0,.2,1);
+        color: black;
+        text-decoration: none;
+        transition: visibility 600ms cubic-bezier(.4,0,.2,1),opacity 400ms cubic-bezier(.4,0,.2,1);
+    }
+
+    .header-menu-nav-folder {
+        position: absolute;
+        display: flex;
+        top: 1.5em;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        justify-content: flex-start;
+        overflow-y: visible;
+        overflow-x: visible;
+        transform: translatex(100%);
+        transition: transform 600ms cubic-bezier(.4,0,.2,1);
+        -webkit-overflow-scrolling: touch;
+        flex-direction: column;
+        will-change: transform;
+        transform: translatex(0%);
+        color: black;
+        text-decoration: none;
+    }
+
+    .header-menu-nav-folder-content {
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-grow: 1;
+        flex-shrink: 0;
+        justify-content: center;
+        flex-direction: column;
+        visibility: visible;
+        color: black;
+        text-decoration: none;
+    }
+
+    .header-menu-nav-item {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        font-size: 1.5rem;
+        line-height: 3;
+        font-family: "orpheus Pro";
+        font-weight: bold;
+        font-style: normal;
+        letter-spacing: 0em;
+        text-transform: none;
+        color: black;
+        text-decoration: none;
+    }
+    .burger-a-tag-current{
+        color: black;
+    }
+
+    .burger-a-tag{
+        color: black;
+        text-decoration: none;
+    }
+
+    .header-menu-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        margin-bottom: 6vw;
+        transform: translatey(0);
+        transition: transform 600ms cubic-bezier(.4,0,.2,1);
+    }
+
+    .header-menu-actions-action {
+        margin: 15px 0px;
+        text-align: center;
+        line-height: 3;
+    }
+
+
+
+
+
+
+
+/*section1*/
+
+.section1{
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative
+
+}
+
+.section1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+.intro-video{  
+    min-width: 100%;
+    min-height: 90vh;
+    height: auto;
+    object-fit: cover;
+    z-index: -100;
+   
+}
+
+
+.section-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .section1-title {
+    font-size: 6em;
+    font-weight: bold;
+    color: white;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    text-align: center;
+    font-family: "orpheus Pro";
+    font-weight: bold;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.2em;
+    margin-bottom: 0;
+    
+  }
+
+
+
+  .section1-subtitle {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: white;
+    margin: 1em;
+    text-align: center;
+    font-family: "OrpheusW05-Regular Regular";
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1em;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    
+  }
+  
+  .section-content button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 0rem;
+    background-color: rgba(255, 255, 255, 0.103);
+    color: white;
+    cursor: pointer;
+    font-family: "OrpheusW05-Regular Regular";
+    letter-spacing: 0em;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    align-content: center;
+    height: 80px;
+    width: 200px;
+    margin: 0.2em;
+  }
+
+  .section-content button:hover{
+
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 255);
+    transition: 0.3s;
+  }
+
+
+
+    @media screen and (max-width: 1200px){
+
+        .section1-title{
+            font-size: 4em;
+        }
+
+        .section1-subtitle {
+            font-size: 1.2em;
+            padding-top: 0.9em;
+
+        }
+    }
+
+    @media screen and (max-width: 800px){
+
+        .section1-title{
+            font-size: 3.5em;
+        }
+
+        .section1-subtitle {
+            font-size: 1.2em;
+            padding-top: 0.6em;
+    
+        }
+
+        .section-content button{
+            font-size: 1.3rem;
+            height: 80px;
+            width: 140px;
+            
+        
+
+        }
+
+    }
+
+    @media screen and (max-width: 500px){
+
+        .section1-title{
+            font-size: 3em;
+        }
+
+        .section1-subtitle {
+            font-size: 1.1em;
+            line-height: 1.5em;
+            padding-top: 0.3em;
+
+        }
+
+        .section-content button{
+            font-size: 1.3rem;
+            height: 60px;
+            width: 250px;
+            display: block;
+
+
+        }
+
+
+    }
+
+
+
+
+
+/*Section 2*/
+
+.section2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    justify-content:start;
+
+}
+
+
+
+/*Image*/
+
+.imagedivsection2{
+    height: 80vh;
+    width: 30vw;
+    margin-left: 8vw;
+    
+}
+
+.imageSection2{
+    object-fit: cover; 
+    object-position: calc(50%) calc(50%); 
+    height: 80vh;
+    width: 30vw;
+    position: relative;
+}
+
+/*text*/
+
+.section2-content{
+    /*this is text and button container*/
+    margin-right: 4em;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 4em;
+}
+
+.section2-title{
+    font-size: 3em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-left: 0em;
+    margin-right: 0.3em;
+    margin-top: 0;
+    text-align: left;
+    font-family: "orpheus Pro";
+    font-weight: bold;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.5em;
+    margin-bottom: 0;
+}
+
+.section2-text{
+    font-size: 1.1em;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    margin: 0em;
+    text-align: left;
+    font-family: "OrpheusW05-Regular Regular";
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.5em;
+    padding-top: 0em;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+
+}
+
+.section2-list{
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    margin: 0em;
+    text-align: left;
+    font-family: "OrpheusW05-Regular Regular";
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+
+/*button*/
+
+.section2-button-container{
+    margin-top: 0em;
+    display: flex;
+    align-content: left;
+}
+
+.section2-button{
+    margin-top: 1rem;
+    padding: 0;
+    border: 2px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 0rem;
+    background-color: rgba(255, 255, 255, 0.103);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-family: "orpheus Pro";
+    letter-spacing: 0em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    align-content: center;
+    height: 80px;
+    object-fit: fill;
+    max-width: 200px;
+    margin: 0.2em;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+
+@media screen and (max-width: 1200px){
+
+    .section2-button{
+        font-size: 1.3rem;
+        height: 80px;
+        width: 140px
+
+
+    }
+
+    .imagedivsection2{
+        margin-left: 4vw;
+
+    }
+
+    .section2-content{
+        margin-left: 2em;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .section2-button{
+        font-size: 1.3rem;
+        height: 80px;
+        width: 140px
+
+    }
+
+    .section2-content{
+        margin-left: 0;
+    }
+
+    .section2{
+    justify-content:center;
+    }
+}
+
+
+/*Section 3*/
+
+.section3{
+
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    background-image: url('/SPIRAL/images/section3.jpg');
+    background-size: cover;
+    background-position: center;
+  
+
+}
+
+.section3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+
+
+
+.section3-title{
+    font-size: 2.5em;
+    font-weight: 500;
+    color: white;
+    margin: 0.5em;
+    text-align: center;
+    font-family: "OrpheusW05-Regular Regular";
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0em;
+}
+
+
+.section3-subtitle{
+    font-size: 3.5em;
+    font-weight: bold;
+    color: white;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    text-align: center;
+    font-family: "orpheus Pro";
+    font-weight: bold;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.2em;
+    margin-bottom: 0;
+
+}
+
+@media screen and (max-width: 1200px){
+    
+    
+    .section3-title{font-size: 2.5em;}
+    .section3-subtitle{font-size: 3em;}
+}
+    
+
+@media screen and (max-width: 800px){
+
+    .section3-title{font-size: 2em;}
+    .section3-subtitle{font-size: 2.5em;}
+}
+
+
+@media screen and (max-width: 500px){
+
+    .section3-title{font-size: 1.5em;}
+    .section3-subtitle{font-size: 2.3em;} 
+
+}
+  
+
+
+
+/*Section 4*/
+
+.section4{
+
+    display: flex;
+}
+
+.section4-margin{
+    margin: 70px 80px;
+
+}
+
+.section4-title{
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-family: "orpheus Pro";
+    font-weight: bold;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.2em;
+    margin-bottom: 0;
+    margin-left: 20px;
+
+}
+
+.section4-ads-container{
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.section4-ad{
+    flex-basis: 300px;
+    flex-grow: 1;
+    height: 400px;
+    position: relative;
+    margin: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.section4-text-container{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+.ad-position-title{
+    margin: 0;
+    padding-top: 0px;
+    font-size: min(1.8em, calc(1.8em * ((100% - 60px) / 20)));
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-family: "orpheus Pro";
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1em;
+    margin-bottom: 0; 
+    word-break: break-word;
+    word-wrap: break-word;
+    max-width: calc(100% - 60px);
+}
+
+.ad-company-name{
+    font-family: "orpheus Pro";
+    color: rgb(0, 0, 0);
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1em;
+    margin-bottom: 0;
+    text-align: left;
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 0.2em;
+    font-family: "OrpheusW05-Regular Regular";
+    font-weight: 500;
+}
+
+.ad-short-description{
+    font-family: "orpheus Pro";
+    color: rgb(0, 0, 0);
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1em;
+    margin-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.demotext {
+    margin: 0;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-family: "orpheus Pro";
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1em;
+    margin-bottom: 0;
+
+}
+
+    
+
+.ad-insertion-date{
+    font-family: "OrpheusW05-Regular Regular";
+    color: rgb(0, 0, 0);
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1em;
+    margin-bottom: 0;
+    text-align: left;
+    margin: 0;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
+
+.ad-salary-range{
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: right;
+    font-family: "orpheus Pro";
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 0em;
+    margin-bottom: 0;
+}
+
+.ad-company-profile-image{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.ad-image{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    
+}
