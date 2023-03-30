@@ -112,26 +112,7 @@
 
 
 
-/*burger*/
-
-    .header-burger{
-        justify-content: flex-end;
-        flex: 0 0 50px;
-        margin-right: 0;
-        align-items: center;
-        width: 50px;
-        display: flex;
-        z-index: 2;
-    }
-
-    .burger {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        background-color: transparent;
-        border: none;
-    }
-
+/*burger*
     .visually-hidden-burger {
         position: absolute !important;
         clip: rect(1px,1px,1px,1px);
